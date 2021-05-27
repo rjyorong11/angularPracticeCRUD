@@ -1,3 +1,32 @@
 <app-sidebar></app-sidebar>
-<p>dashboard works!</p>
-<button (click)="logOut()">Logout</button>
+<div class="card">
+    <div class="w3-container">
+        <h2>Basic Table</h2>
+        <p>The w3-table class defines a basic table:</p>
+
+        <table class="w3-table w3-card-4">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Username</th>
+                <th>Address</th>
+                <th></th>
+                <th>Action</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let user of dataService.dataHandler">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.username }}</td>
+                <td> {{ user.address.street + ', ' +user.address.city }} </td>
+                <td style="text-align: center;"><i class="fa fa-eye" aria-hidden="true" style="font-size:30px;"></i>
+                </td>
+                <td style="text-align: center;"><i class="fa fa-edit" style="font-size:30px;"></i></td>
+                <td style="text-align: center;"><i class="fa fa-trash" aria-hidden="true" style="font-size:30px;"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div><br><br><br><br>

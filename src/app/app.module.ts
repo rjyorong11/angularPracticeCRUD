@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginPagesComponent } from './pages/login-pages/login-pages.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ViewUsersDataComponent } from './components/view-users-data/view-users-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     LoginPagesComponent,
-    SidebarComponent
+    SidebarComponent,
+    ViewUsersDataComponent
   ],
   imports: [
     BrowserModule,

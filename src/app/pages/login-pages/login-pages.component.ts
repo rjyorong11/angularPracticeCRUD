@@ -8,6 +8,7 @@ import { AuthenticationService } from 'src/app/auth-service/authentication.servi
   styleUrls: ['./login-pages.component.css']
 })
 export class LoginPagesComponent implements OnInit {
+  public showPassword = "password"
   public username = ''
 
   constructor(
@@ -26,4 +27,13 @@ export class LoginPagesComponent implements OnInit {
     this.auth.login(userCred.form.value)
     userCred.reset()
   }
+
+  passwordShow() {
+    if(this.showPassword == "text") {
+      this.showPassword = "password"
+    }else {
+      this.showPassword = "text"
+    }
+  }
+
 }
