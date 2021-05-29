@@ -2,12 +2,12 @@
     <div class="container">
         <div class="header">
             <div>
-                <img style="border-radius: 50%;" src="../../../assets/icon.png" alt="">
+                <img style="border-radius: 50%; width: 50%; height: 50%;" src="../../../assets/icon.png" alt="">
             </div>
         </div>
         <form #credentials="ngForm">
             <div class="userWithIcon">
-                <label style="color: white;">.</label>
+                <label style="color: rgba(177, 177, 177, 0.8);">.</label>
                 <input placeholder="Enter your Username" type="text" id="name" name="name" class="form-control" required
                     [(ngModel)]="username" #name="ngModel">
                 <i class="fa fa-user fa-lg"></i>
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="passwordWithIcon">
-                <label style="color: white;">.</label>
+                <label style="color: rgba(177, 177, 177, 0.8);">.</label>
                 <input placeholder="Enter your Password" [type]="showPassword" id="password" name="Password"
                     class="form-control" required [(ngModel)]="password" #Password="ngModel">
                 <i class="fa fa-key fa-lg"></i>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div><br>
-            <input type="checkbox" (click)="passwordShow()">Show password
+            <input style="float: left;" type="checkbox" (click)="passwordShow()"><label style="float: left;">Show password</label>
             <button (click)="onLogin(credentials)">Sign-In</button>
             <div style="text-align: center; font-family: Arial, Helvetica, sans-serif;">
                 <a href="login">You forgot your password?</a>
@@ -39,8 +39,9 @@
 <div class="image">
     <div class="welcomeImage">
         <div class="text">
-            <h1 class="welcome">Welcome to</h1>
-            <img style="width: 50%; border-radius: 50%;" src="../../../assets/icon.png" alt="">
+            <h2>Welcome to <a href="https://1028business.ph/" target="_blank">10.20 Business Consultancy</a></h2>
+            <label class="welcome"></label>
+            <img src="../../../assets/background.jpg" alt="">
         </div>
     </div>
 </div>

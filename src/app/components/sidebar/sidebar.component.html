@@ -1,6 +1,13 @@
-<div class="sidenav">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#clients">Clients</a>
-    <a (click)="logOut()" href="">Logout</a>
+<div class="w3-container">
+    <div class="w3-table w3-card-4">
+        <div class="sidenav">
+            <div class="image">
+                <img style="width: 75%; height: 75%; border-radius: 50%;" src="../../../assets/icon.png">
+            </div>
+            <ul class="w3-ul w3-border-top w3-border-bottom">
+                <li class="w3-padding-large"><a *ngFor="let menu of navbarMenus" [href]="menu.path">{{ menu.display }}</a></li>
+                <li class="w3-padding-large" (click)="logOut()"><a href="/login">Logout</a></li>
+              </ul> 
+        </div>
+    </div>
 </div>

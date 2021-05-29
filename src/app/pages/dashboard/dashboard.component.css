@@ -2,19 +2,78 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border: 1px solid #ddd;
+}
+
+* {
+    color: rgb(77, 77, 77);
 }
 
 .card {
-    margin-left: 13%;
+    margin-left: 200px;
+    border-right: 1px solid rgb(167, 167, 167);
 }
 
 th,
 td {
     text-align: left;
-    padding: 8px;
 }
 
-@media screen and (max-width: 800px) {
+table,
+th,
+td {
+    border: 1px solid rgba(130, 130, 130, 0.2);
+    font-size: 13px;
+}
 
+tr:hover {
+    background-color: rgba(216, 216, 216, 0.2);
+}
+
+th {
+    background-color: rgba(139, 216, 242, 0.5);
+}
+
+i {
+    font-size: 23px;
+    transition: 0.5s ease;
+}
+
+i:hover {
+    color: rgba(54, 79, 216, 0.7);
+}
+
+.delete:hover {
+    color: red;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.header,
+.footer {
+    background-color: rgba(139, 216, 242, 0.5);
+}
+
+button {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: rgba(139, 216, 242, 0.5);
+    color: rgb(77, 77, 77);
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #ddd;
+    color: black;
 }

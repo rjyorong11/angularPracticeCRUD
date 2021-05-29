@@ -7,6 +7,9 @@ import { AuthenticationService } from 'src/app/auth-service/authentication.servi
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  public navbarMenus = [
+    {path: "/dashboard", display: "Dashboard"}
+  ]
 
   constructor(
     public auth: AuthenticationService
