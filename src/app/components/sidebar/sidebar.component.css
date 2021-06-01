@@ -30,7 +30,11 @@
   }
 
   li:hover {
-      background-color: rgba(139, 216, 242, 0.5);
+      background-color: rgba(176, 234, 253, 0.5);
+  }
+
+  .colorSelectedNav {
+    background-color: rgba(201, 201, 201, 0.3);
   }
 
   

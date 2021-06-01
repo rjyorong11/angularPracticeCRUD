@@ -1,0 +1,41 @@
+<app-sidebar></app-sidebar>
+<div class="holder">
+    <div class="row">
+        <div style="text-align: center;">
+            <h1>Add New Employee</h1>
+        </div>
+        <form #dataAdded="ngForm">
+            <div class="singleColumn">
+                <p>First Name: </p>
+                <input type="text" name="firstname" ngModel #firstname="ngModel">
+            </div>
+            <div class="singleColumn">
+                <p>Last Name: </p>
+                <input type="text" name="lastname" ngModel #lastname="ngModel">
+            </div>
+            <div class="singleColumn">
+                <p>Email: </p>
+                <input type="text" name="email" ngModel #email="ngModel">
+            </div>
+            <div class="singleColumn">
+                <p>Phone #: </p>
+                <input type="text" name="phone" ngModel #phone="ngModel">
+            </div>
+            <div class="singleColumn">
+                <p>Username: </p>
+                <input type="text" name="username" ngModel #username="ngModel">
+            </div>
+            <div class="column">
+                <p>Address(Street.)</p>
+                <input type="text" name="street" ngModel #address="ngModel">
+            </div>
+            <div class="column">
+                <p>Address(City)</p>
+                <input type="text" name="city" ngModel #address="ngModel">
+            </div><br>
+            <div class="singleColumn"><br><br>
+                <button class="w3-button w3-light-blue" (click)="onSubmit(dataAdded)">Submit</button>
+            </div>
+        </form>
+    </div>
+</div><br><br>

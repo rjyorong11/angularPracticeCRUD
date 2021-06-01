@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2'
 import { DataService } from 'src/app/services/data.service';
+import { UserService } from 'src/assets/partial-database.database';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,18 +15,18 @@ export class DashboardComponent implements OnInit {
   public index = 0
 
   constructor(
-    public dataService: DataService
+    public dataService: DataService,
+    public usersService: UserService
   ) { }
 
   ngOnInit() {
-    this.dataService.getAllData()
   }
 
   displaySelectedItem(index, type, boolean) {
     this.index = index
     this.actionType = type
     this.isToEdit = boolean
-    this.selectedItem = this.dataService.dataHandler[index]
+    this.selectedItem = this.dataService.dataHandler.concat(this.usersService.newlyAddedEmployee)[index]
   }
 
   deleteSelectedUser(index) {

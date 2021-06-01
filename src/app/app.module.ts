@@ -9,6 +9,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginPagesComponent } from './pages/login-pages/login-pages.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ViewUsersDataComponent } from './components/view-users-data/view-users-data.component';
+import { AddNewUserComponent } from './pages/add-new-user/add-new-user.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ViewUsersDataComponent } from './components/view-users-data/view-users-
     DashboardComponent,
     LoginPagesComponent,
     SidebarComponent,
-    ViewUsersDataComponent
+    ViewUsersDataComponent,
+    AddNewUserComponent
   ],
   imports: [
     BrowserModule,

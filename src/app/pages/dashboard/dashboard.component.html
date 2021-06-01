@@ -3,8 +3,9 @@
     <div class="w3-container">
         <h2>Employess Names</h2>
         <p>Here are the lists of names!</p>
-
-        <div></div>
+        <div class="addButton">
+            <button class="w3-button w3-xlarge w3-circle buttonAdd" routerLink="/add-new-user">+</button>
+        </div>
         <table class="w3-table w3-card-4">
             <tr>
                 <th>Name</th>
@@ -16,7 +17,7 @@
                 <th>Action</th>
                 <th></th>
             </tr>
-            <tr *ngFor="let user of dataService.dataHandler; let i = index">
+            <tr *ngFor="let user of dataService.dataHandler.concat(usersService.newlyAddedEmployee); let i = index">
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.phone }}</td>
@@ -59,7 +60,7 @@
             <input type="text" [(ngModel)]="selectedItem.username" [disabled]="!isToEdit">
         </div>
         <footer class="w3-container" *ngIf="actionType != 'View'">
-            <button onclick="document.getElementById('id01').style.display='none'" (click)="updateTheSelectedItem()">{{ actionType }}</button>
+            <button class="button" onclick="document.getElementById('id01').style.display='none'" (click)="updateTheSelectedItem()">{{ actionType }}</button>
         </footer>
     </div>
 </div>

@@ -59,7 +59,7 @@ input {
     background-color: rgba(139, 216, 242, 0.5);
 }
 
-button {
+.button {
     display: block;
     width: 100%;
     border: none;
@@ -73,7 +73,18 @@ button {
     margin-bottom: 10px;
 }
 
-button:hover {
+.button:hover {
     background-color: #ddd;
     color: black;
+}
+
+.addButton {
+    text-align: right;
+    margin: 10px;
+    margin-right: 0;
+}
+
+.buttonAdd {
+    background-color: rgba(139, 216, 242, 0.5);
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
 }
