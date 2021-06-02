@@ -17,7 +17,7 @@
                 <th>Action</th>
                 <th></th>
             </tr>
-            <tr *ngFor="let user of dataService.dataHandler.concat(usersService.newlyAddedEmployee); let i = index">
+            <tr *ngFor="let user of concatedData; let i = index">
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.phone }}</td>
@@ -45,7 +45,7 @@
 <div id="id01" class="w3-modal" style="padding-top: 2%;">
     <div class="w3-modal-content w3-animate-top w3-card-4" style="border-radius: 10px;">
         <header class="w3-container header" style="text-align: center; border-radius: 10px;">
-            <span onclick="document.getElementById('id01').style.display='none'" style="border-radius: 10px;"
+            <span onclick="document.getElementById('id01').style.display='none'" style="border-top-right-radius: 10px; background-color: rgba(255, 255, 255, 0.1);"
                 class="w3-button w3-display-topright">&times;</span>
             <h2>{{ actionType }} User</h2>
         </header>

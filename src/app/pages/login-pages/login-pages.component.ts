@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/auth-service/authentication.service';
+import { DataService } from '../../services/data.service'
 
 @Component({
   selector: 'app-login-pages',
@@ -13,7 +14,8 @@ export class LoginPagesComponent implements OnInit {
 
   constructor(
     public auth: AuthenticationService,
-    public router: Router
+    public router: Router,
+    public dataService: DataService
   ) { }
 
   ngOnInit() {

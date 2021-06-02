@@ -3,36 +3,87 @@
     <div class="row">
         <div style="text-align: center;">
             <h1>Add New Employee</h1>
+
+            {{ count$ | async }}
         </div>
         <form #dataAdded="ngForm">
             <div class="singleColumn">
                 <p>First Name: </p>
-                <input type="text" name="firstname" ngModel #firstname="ngModel">
+                <input autocomplete="off" type="text" name="firstname" class="form-control" ngModel #firstname="ngModel" required>
+                <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert">
+                    <div *ngIf="firstname.errors?.required" class="colorTheValidation">
+                        Firstname is required.
+                    </div>
+                </div>
             </div>
+
+
             <div class="singleColumn">
                 <p>Last Name: </p>
-                <input type="text" name="lastname" ngModel #lastname="ngModel">
+                <input autocomplete="off" type="text" name="lastname" class="form-control" ngModel #lastname="ngModel" required>
+                <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert">
+                    <div *ngIf="lastname.errors?.required" class="colorTheValidation">
+                        Lastname is required.
+                    </div>
+                </div>
             </div>
+
+
             <div class="singleColumn">
                 <p>Email: </p>
-                <input type="text" name="email" ngModel #email="ngModel">
+                <input autocomplete="off" type="text" name="email" class="form-control" ngModel #email="ngModel" required>
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                    <div *ngIf="email.errors?.required" class="colorTheValidation">
+                        Email is required.
+                    </div>
+                </div>
             </div>
+
+
             <div class="singleColumn">
                 <p>Phone #: </p>
-                <input type="text" name="phone" ngModel #phone="ngModel">
+                <input autocomplete="off" type="text" name="phone" class="form-control" ngModel #phone="ngModel" required>
+                <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert">
+                    <div *ngIf="phone.errors?.required" class="colorTheValidation">
+                        Phone is required.
+                    </div>
+                </div>
             </div>
+
+
             <div class="singleColumn">
                 <p>Username: </p>
-                <input type="text" name="username" ngModel #username="ngModel">
+                <input autocomplete="off" type="text" name="username" class="form-control" ngModel #username="ngModel" required>
+                <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert">
+                    <div *ngIf="username.errors?.required" class="colorTheValidation">
+                        Username is required.
+                    </div>
+                </div>
             </div>
+
+
             <div class="column">
                 <p>Address(Street.)</p>
-                <input type="text" name="street" ngModel #address="ngModel">
+                <input autocomplete="off" type="text" name="street" class="form-control" ngModel #street="ngModel" required>
+                <div *ngIf="street.invalid && (street.dirty || street.touched)" class="alert">
+                    <div *ngIf="street.errors?.required" class="colorTheValidation">
+                        Address(Street) is required.
+                    </div>
+                </div>
             </div>
+
+
             <div class="column">
                 <p>Address(City)</p>
-                <input type="text" name="city" ngModel #address="ngModel">
+                <input autocomplete="off" type="text" name="city" class="form-control" ngModel #city="ngModel" required>
+                <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert">
+                    <div *ngIf="city.errors?.required" class="colorTheValidation">
+                        Address(City) is required.
+                    </div>
+                </div>
             </div><br>
+
+
             <div class="singleColumn"><br><br>
                 <button class="w3-button w3-light-blue" (click)="onSubmit(dataAdded)">Submit</button>
             </div>

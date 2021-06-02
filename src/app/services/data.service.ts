@@ -19,7 +19,6 @@ export class DataService {
     getAllData() {
         this.http.get(this.url).subscribe((response: any) => {
             this.dataHandler = response
-            this.dataHandler.concat(this.usersService.newlyAddedEmployee)
         })
     }
 

@@ -1,5 +1,5 @@
 .holder {
-  margin-left: 300px;
+  margin-left: 30%;
   border-right: 1px solid rgb(167, 167, 167);
   box-sizing: border-box;
 }
@@ -52,4 +52,24 @@ button {
   width: 100%;
   padding: 15px;
   border-radius: 50px;
+}
+
+.colorTheValidation {
+  color: red;
+  font-size: 13px;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+@media screen and (max-width: 992px) {
+  .row {
+    width: 500px;
+    margin-right: 150px;
+  }
+
+  .holder {
+    margin-left: 90px;
+  }
 }
