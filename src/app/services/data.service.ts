@@ -14,11 +14,18 @@ export class DataService {
         private http: HttpClient,
         public usersService: UserService
     ) {
+        this.getAllData()
     }
 
     getAllData() {
+        var fromDatabase = []
         this.http.get(this.url).subscribe((response: any) => {
-            this.dataHandler = response
+            response.forEach(element => {
+                element["database"] = true
+                fromDatabase.push(element)
+            });
+            this.dataHandler = fromDatabase
+           
         })
     }
 

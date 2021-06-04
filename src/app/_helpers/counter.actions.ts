@@ -11,3 +11,9 @@ export const employeeAddedSuccessfully = createAction(
     }>()
 );
 
+export const deleteEmployee = createAction(
+    '[Employee/Added] Deleted Successfully',
+    props<{ 
+        index: number; 
+    }>()
+)

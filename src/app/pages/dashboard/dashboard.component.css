@@ -87,4 +87,9 @@ input {
 .buttonAdd {
     background-color: rgba(139, 216, 242, 0.5);
     box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.buttonAdd:active {
+    transform: translateY(4px);
 }

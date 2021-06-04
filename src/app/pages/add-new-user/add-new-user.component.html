@@ -3,27 +3,16 @@
     <div class="row">
         <div style="text-align: center;">
             <h1>Add New Employee</h1>
-
             {{ count$ | async }}
         </div>
-        <form #dataAdded="ngForm">
-            <div class="singleColumn">
-                <p>First Name: </p>
-                <input autocomplete="off" type="text" name="firstname" class="form-control" ngModel #firstname="ngModel" required>
-                <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert">
-                    <div *ngIf="firstname.errors?.required" class="colorTheValidation">
-                        Firstname is required.
-                    </div>
-                </div>
-            </div>
-
+        <form class="form" [formGroup]="newlyAddedMembers" (ngSubmit)="onSubmit()">
 
             <div class="singleColumn">
-                <p>Last Name: </p>
-                <input autocomplete="off" type="text" name="lastname" class="form-control" ngModel #lastname="ngModel" required>
-                <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert">
-                    <div *ngIf="lastname.errors?.required" class="colorTheValidation">
-                        Lastname is required.
+                <p>Name: </p>
+                <input autocomplete="off" type="text" class="form-control" formControlName="name" required>
+                <div *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required" class="alert">
+                    <div class="colorTheValidation">
+                        Full Name is required.
                     </div>
                 </div>
             </div>
@@ -31,9 +20,9 @@
 
             <div class="singleColumn">
                 <p>Email: </p>
-                <input autocomplete="off" type="text" name="email" class="form-control" ngModel #email="ngModel" required>
-                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
-                    <div *ngIf="email.errors?.required" class="colorTheValidation">
+                <input autocomplete="off" type="text" class="form-control" formControlName="email" required>
+                <div *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required" class="alert">
+                    <div class="colorTheValidation">
                         Email is required.
                     </div>
                 </div>
@@ -42,9 +31,9 @@
 
             <div class="singleColumn">
                 <p>Phone #: </p>
-                <input autocomplete="off" type="text" name="phone" class="form-control" ngModel #phone="ngModel" required>
-                <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert">
-                    <div *ngIf="phone.errors?.required" class="colorTheValidation">
+                <input autocomplete="off" type="text" class="form-control" formControlName="phone" required>
+                <div *ngIf="(registerFormControl.phone.touched || submitted) && registerFormControl.phone.errors?.required" class="alert">
+                    <div class="colorTheValidation">
                         Phone is required.
                     </div>
                 </div>
@@ -53,9 +42,9 @@
 
             <div class="singleColumn">
                 <p>Username: </p>
-                <input autocomplete="off" type="text" name="username" class="form-control" ngModel #username="ngModel" required>
-                <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert">
-                    <div *ngIf="username.errors?.required" class="colorTheValidation">
+                <input autocomplete="off" type="text" class="form-control" formControlName="username" required>
+                <div *ngIf="(registerFormControl.username.touched || submitted) && registerFormControl.username.errors?.required" class="alert">
+                    <div class="colorTheValidation">
                         Username is required.
                     </div>
                 </div>
@@ -64,9 +53,9 @@
 
             <div class="column">
                 <p>Address(Street.)</p>
-                <input autocomplete="off" type="text" name="street" class="form-control" ngModel #street="ngModel" required>
-                <div *ngIf="street.invalid && (street.dirty || street.touched)" class="alert">
-                    <div *ngIf="street.errors?.required" class="colorTheValidation">
+                <input autocomplete="off" type="text" class="form-control" formControlName="street" required>
+                <div *ngIf="(registerFormControl.street.touched || submitted) && registerFormControl.street.errors?.required" class="alert">
+                    <div class="colorTheValidation">
                         Address(Street) is required.
                     </div>
                 </div>
@@ -75,9 +64,9 @@
 
             <div class="column">
                 <p>Address(City)</p>
-                <input autocomplete="off" type="text" name="city" class="form-control" ngModel #city="ngModel" required>
-                <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert">
-                    <div *ngIf="city.errors?.required" class="colorTheValidation">
+                <input autocomplete="off" type="text" class="form-control" formControlName="city" required>
+                <div *ngIf="(registerFormControl.city.touched || submitted) && registerFormControl.city.errors?.required" class="alert">
+                    <div class="colorTheValidation">
                         Address(City) is required.
                     </div>
                 </div>
@@ -85,7 +74,7 @@
 
 
             <div class="singleColumn"><br><br>
-                <button class="w3-button w3-light-blue" (click)="onSubmit(dataAdded)">Submit</button>
+                <button class="w3-button w3-light-blue">Submit</button>
             </div>
         </form>
     </div>

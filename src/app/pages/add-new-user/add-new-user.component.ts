@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { increment, decrement, reset, employeeAddedSuccessfully } from '../../_helpers/counter.actions';
 import { Store } from '@ngrx/store';
 import Swal from 'sweetalert2'
+import { FormBuilder, FormControl, FormGroup, Validators  } from '@angular/forms';
 
 
 
@@ -15,51 +16,53 @@ import Swal from 'sweetalert2'
 })
 export class AddNewUserComponent implements OnInit {
   public count$: Observable<any>
+  public newlyAddedMembers: FormGroup;
+  public submitted = false
 
   constructor(
     private store: Store<{ count: number }>,
     public usersService: UserService,
     public router: Router,
-  ) { 
+    public employee: FormBuilder
+  ) {
     // console.log(store.select('store'))
   }
 
   ngOnInit() {
+    this.newlyAddedMembers = this.employee.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      phone: ['', Validators.required],
+      username: ['', Validators.required],
+      street: ['', Validators.required],
+      city: ['', Validators.required]
+    })
   }
 
-  onSubmit(value) {
-    if(!this.checkObjectAddedIsEmpty(value.form.value)) { 
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You want to add the user or check before submit?",
-        icon: 'info',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, Add new User!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.store.dispatch(employeeAddedSuccessfully(value.form.value))
-          this.router.navigate(['dashboard'])
-          value.reset()
-          Swal.fire(
-            'Addded!',
-            'New user successfully added!.',
-            'success'
-          )
-        }
-      })
-    }else {
-      Swal.fire('Sorry', 'You must fill all input fields', 'error')
-    } 
+  get registerFormControl() {
+    return this.newlyAddedMembers.controls
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.newlyAddedMembers.valid) {
+      this.store.dispatch(employeeAddedSuccessfully(this.newlyAddedMembers.value))
+      this.router.navigate(['dashboard'])
+      Swal.fire(
+        'Addded!',
+        'A new employee was successfully added!.',
+        'success'
+      )
+    }
   }
 
   checkObjectAddedIsEmpty(obj) {
     for (var key in obj) {
-      if (obj[key] !== null && obj[key] != "")
-          return false;
-  }
-  return true;
+      if (obj[key] !== null && obj[key] != "") {
+        return false;
+      }        
+    }
+    return true;
   }
 
 }
