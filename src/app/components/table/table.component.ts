@@ -102,7 +102,7 @@ export class TableComponent implements OnInit {
     }
   }
 
-  // Kini siya nga function kay filter search
+  // Kini siya nga function kay filter 
   searchEvent(value) {
     var partialArray = []
     this.concatedData.forEach(element => {
