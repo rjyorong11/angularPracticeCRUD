@@ -15,6 +15,8 @@ import { FormBuilder, FormControl, FormGroup, Validators  } from '@angular/forms
   styleUrls: ['./add-new-user.component.css']
 })
 export class AddNewUserComponent implements OnInit {
+  public image: any;
+  public isFormValid = false
   public count$: Observable<any>
   public newlyAddedMembers: FormGroup;
   public submitted = false
@@ -40,10 +42,13 @@ export class AddNewUserComponent implements OnInit {
   }
 
   get registerFormControl() {
+    this.isFormValid = this.newlyAddedMembers.valid
     return this.newlyAddedMembers.controls
   }
 
   onSubmit() {
+    this.usersService.employeesImages.push({name: this.newlyAddedMembers.value.name, profile: this.image})
+    console.log(this.newlyAddedMembers.value.name)
     this.submitted = true;
     if (this.newlyAddedMembers.valid) {
       this.store.dispatch(employeeAddedSuccessfully(this.newlyAddedMembers.value))
@@ -63,6 +68,26 @@ export class AddNewUserComponent implements OnInit {
       }        
     }
     return true;
+  }
+
+  getTheWidthResize(width) {
+    if(width.target.innerWidth < 750) {
+      document.getElementById('holder').style.marginLeft = '0'
+    }else {
+      document.getElementById('holder').style.marginLeft = '30%'      
+    }
+  }
+
+  onSelectFile(event) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        this.image = event.target.result;
+      }
+    }
   }
 
 }

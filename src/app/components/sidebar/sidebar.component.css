@@ -1,44 +1,58 @@
 .sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #ffffff;
-    overflow-x: hidden;
-    border-right: 1px solid rgba(202, 199, 199, 0.2);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 15px;
-    color: rgb(77, 77, 77);
-    display: block;
-  }
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  border-right: 1px solid rgba(202, 199, 199, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: rgb(77, 77, 77);
+  display: block;
+}
 
-  .image {
-    text-align: center; 
-    padding: 10px;
-  }
+.image {
+  text-align: center;
+  padding: 10px;
+}
+i {
+  font-size: 60px;
+}
 
-  li {
-      border-right: none;
-  }
+.icon {
+  left: 170px;
+  position: fixed; 
+  text-align: right; 
+  padding: 10px; 
+  color: rgba(89, 89, 89, 0.5); 
+  z-index: 10;
+}
 
-  li:hover {
-      background-color: rgba(205, 243, 255, 0.5);
-  }
+.burgerNav {
+  left: 30px;
+  position: fixed; 
+  text-align: right; 
+  padding: 10px; 
+  color: rgba(89, 89, 89, 0.5); 
+  z-index: 10;
+}
 
-  .colorSelectedNav {
-    background-color: rgba(201, 201, 201, 0.3);
-  }
+li {
+  border-right: none;
+}
 
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+li:hover {
+  background-color: rgba(205, 243, 255, 0.5);
+}
+
+.colorSelectedNav {
+  background-color: rgba(201, 201, 201, 0.3);
+}

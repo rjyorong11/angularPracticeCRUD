@@ -1,0 +1,136 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+* {
+    color: rgb(77, 77, 77);
+}
+
+#getMargin {
+    margin-left: 200px;
+    border-right: 1px solid rgb(167, 167, 167);
+}
+
+th,
+td {
+    text-align: left;
+}
+
+table,
+th,
+td {
+    /* border: 1px solid rgba(130, 130, 130, 0.2); */
+    font-size: 13px;
+}
+
+tr:hover {
+    background-color: rgba(216, 216, 216, 0.2);
+}
+
+th {
+    background-color: rgba(139, 216, 242, 0.5);
+}
+
+i {
+    font-size: 23px;
+    transition: 0.5s ease;
+}
+
+i:hover {
+    color: rgba(54, 79, 216, 0.7);
+}
+
+.delete:hover {
+    color: red;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.header,
+.footer {
+    background-color: rgba(139, 216, 242, 0.5);
+}
+
+.button {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: rgba(139, 216, 242, 0.5);
+    color: rgb(77, 77, 77);
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.addButton {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    text-align: right;
+    margin: 10px;
+    margin-right: 0;
+}
+
+.buttonAdd {
+    background-color: rgb(139, 216, 242);
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.buttonAdd:active {
+    transform: translateY(4px);
+}
+.image {
+    position: relative;
+    width: 100%;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.container img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+
+.container .btn {
+    position: absolute;
+    top: 50%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 30%;
+}
+
+input[type='file'] {
+    color: transparent;
+}
+

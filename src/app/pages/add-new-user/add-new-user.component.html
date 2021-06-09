@@ -1,11 +1,15 @@
-<app-sidebar></app-sidebar>
-<div class="holder">
+<div id="holder" (window:resize)="getTheWidthResize($event)">
     <div class="row">
         <div style="text-align: center;">
             <h1>Add New Employee</h1>
             {{ count$ | async }}
         </div>
         <form class="form" [formGroup]="newlyAddedMembers" (ngSubmit)="onSubmit()">
+
+            <div class="singleColumn" style="text-align: center;">
+                <img [src]="image" alt="Profile">
+                <input type="file" (change)="onSelectFile($event)">
+            </div>
 
             <div class="singleColumn">
                 <p>Name: </p>
@@ -74,7 +78,7 @@
 
 
             <div class="singleColumn"><br><br>
-                <button class="w3-button w3-light-blue">Submit</button>
+                <button class="w3-button w3-light-blue" [disabled]="!isFormValid">Submit</button>
             </div>
         </form>
     </div>

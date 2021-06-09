@@ -6,12 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './_helpers/counter.reducer'
+import { marginModification } from './_helpers/margin-realtime/margin.reducer'
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginPagesComponent } from './pages/login-pages/login-pages.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ViewUsersDataComponent } from './components/view-users-data/view-users-data.component';
 import { AddNewUserComponent } from './pages/add-new-user/add-new-user.component';
+import { TableComponent } from './components/table/table.component';
+import { LayoutComponent } from './admin/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { AddNewUserComponent } from './pages/add-new-user/add-new-user.component
     DashboardComponent,
     LoginPagesComponent,
     SidebarComponent,
-    ViewUsersDataComponent,
-    AddNewUserComponent
+    AddNewUserComponent,
+    TableComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { AddNewUserComponent } from './pages/add-new-user/add-new-user.component
     FormsModule,
     ReactiveFormsModule ,
     HttpClientModule,
-    StoreModule.forRoot({ count: counterReducer})
+    StoreModule.forRoot({ count: counterReducer, id: marginModification})
   ],
   providers: [],
   bootstrap: [AppComponent]

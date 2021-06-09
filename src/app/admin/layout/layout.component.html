@@ -1,0 +1,4 @@
+<app-sidebar [isHidden]="isHidden" *ngIf="logout"></app-sidebar>
+<div class="main-container" (window:resize)="getTheWidthResize($event)">
+    <router-outlet></router-outlet>
+</div>

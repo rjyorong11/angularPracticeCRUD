@@ -1,6 +1,7 @@
 // https://jsonplaceholder.typicode.com/users
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/assets/partial-database.database';
 
 @Injectable({ providedIn: 'root' })
@@ -12,7 +13,8 @@ export class DataService {
 
     constructor(
         private http: HttpClient,
-        public usersService: UserService
+        public usersService: UserService,
+        public router: Router
     ) {
         this.getAllData()
     }

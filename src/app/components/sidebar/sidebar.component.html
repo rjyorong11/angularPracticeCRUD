@@ -1,10 +1,16 @@
-<div class="w3-container">
-    <div class="w3-table w3-card-4">
+<div class="burgerNav" *ngIf="isHidden">
+    <i class="fa fa-align-justify" aria-hidden="true" style="font-size: 40px;" (click)="hideSideNav()"></i>
+</div>
+<div class="w3-container" *ngIf="!isHidden">
+    <div class="w3-table w3-card-4">        
         <div class="sidenav">
+            <div class="icon">
+                <i class="fa fa-angle-double-left" aria-hidden="true" (click)="hideSideNav()"></i>
+            </div>            
             <div class="image">
                 <img style="width: 75%; height: 75%; border-radius: 50%;" src="../../../assets/icon.png">
             </div>
-            <ul class="w3-ul w3-border-top w3-border-bottom">
+            <ul class="w3-ul w3-border-top w3-border-bottom">                
                 <li class="w3-padding-large" *ngFor="let menu of navbarMenus" [ngClass]="{'colorSelectedNav': router.url === menu.path}"><a [routerLink]="menu.path">{{ menu.display }}</a></li>
                 <li class="w3-padding-large" (click)="logOut()"><a href="/login">Logout</a></li>
               </ul> 

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewUsersDataComponent } from './view-users-data.component';
+import { LayoutComponent } from './layout.component';
 
-describe('ViewUsersDataComponent', () => {
-  let component: ViewUsersDataComponent;
-  let fixture: ComponentFixture<ViewUsersDataComponent>;
+describe('LayoutComponent', () => {
+  let component: LayoutComponent;
+  let fixture: ComponentFixture<LayoutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewUsersDataComponent ]
+      declarations: [ LayoutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewUsersDataComponent);
+    fixture = TestBed.createComponent(LayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
