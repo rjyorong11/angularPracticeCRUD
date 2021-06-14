@@ -3,17 +3,20 @@
         <button class="w3-button w3-xlarge w3-circle buttonAdd" routerLink="/add-new-user">+</button>
     </div>
     <div class="w3-container">
-        <h2>Employess Names</h2>
-        <p>Here are the lists of names!</p>
-        <div class="inputSearch">
-            <select placeholder="Numbers of data to show!" (change)="getInputedLength($event)"
-                style="width: 25%; padding: 5px;">
-                <option>Numbers of data to show!</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-            </select>
-            <input placeholder="Search..." type="text" style="width: 25%; padding: 5px;margin-left: 50%;" (input)="searchEvent($event)">
-        </div>
+        <div class="employeeHeader">
+            <h2>Employess Names</h2>
+            <p>Here are the lists of names!</p>
+            <!-- <div class="inputSearch"> -->
+                <select placeholder="Numbers of data to show!" (change)="getInputedLength($event)"
+                    style="width: 25%; padding: 5px;">
+                    <option>Numbers of data to show!</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                </select>
+                <input placeholder="Search..." type="text" style="width: 25%; padding: 5px;margin-left: 50%;"
+                    (input)="searchEvent($event)">
+            <!-- </div> -->
+        </div><br><br><br><br><br><br><br>
         <div style="overflow-x: auto;">
             <table class="w3-table w3-bordered">
                 <tr>
@@ -50,7 +53,7 @@
                             (click)="deleteSelectedUser(i, user)"></i>
                     </td>
                 </tr>
-            </table>
+            </table><br><br><br>
         </div>
     </div>
 </div>
@@ -61,14 +64,13 @@
             <span onclick="document.getElementById('id01').style.display='none'"
                 style="border-top-right-radius: 10px; background-color: rgba(255, 255, 255, 0.1);"
                 class="w3-button w3-display-topright">&times;</span>
-            <h2>{{ actionType }} User</h2>
         </header>
-        <div class="w3-container">
+        <div class="w3-container"><br><br>
             <div class="container">
                 <img *ngIf="url != undefined" [src]="url" alt="Snow">
                 <img *ngIf="url == undefined" src="../../../assets/765-default-avatar.png" alt="Snow">
                 <input *ngIf="isToEdit" class="btn" type="file" (change)="onSelectFile($event)">
-              </div>
+            </div>
             <!-- <div class="image">
                 <img src="https://www.w3schools.com/w3images/team2.jpg" alt="">
                 <button *ngIf="isToEdit" style="outline: none;" class="btn">Change Image</button>

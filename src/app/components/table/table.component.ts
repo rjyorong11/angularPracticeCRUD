@@ -28,17 +28,18 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.allEmployee = this.concatedData
-    console.log(this.url)
   }
 
   displaySelectedItem(index, type, boolean) {
-    for (let i = 0; i < this.usersService.employeesImages.length; i++) {
-      console.log()
-      if(this.usersService.employeesImages[i].name === this.concatedData[index].name) {
-        this.url = this.usersService.employeesImages[i].profile
-      }else {
-        this.url = undefined
+    this.url = undefined
+    if(this.usersService.employeesImages.length != 0) {
+      for (let i = 0; i < this.usersService.employeesImages.length; i++) {
+        if(this.usersService.employeesImages[i].name === this.concatedData[index].name) {
+          this.url = this.usersService.employeesImages[i].profile
+        }
       }
+    }else {
+      this.usersService.employeesImages.push({name: this.concatedData[index].name, profile: this.url})
     }
     this.index = index
     this.actionType = type
@@ -63,6 +64,7 @@ export class TableComponent implements OnInit {
           this.deleteSelectedMember.emit(user)
         }
         this.concatedData.splice(index, 1)
+        this.allEmployee = this.concatedData
         Swal.fire(
           'Deleted!',
           'Your file has been deleted.',
@@ -79,6 +81,8 @@ export class TableComponent implements OnInit {
         this.usersService.employeesImages.push({name: this.concatedData[this.index].name, profile: this.url})
       }
     })
+    console.log(this.usersService.employeesImages)
+    this.url = undefined
     this.concatedData[this.index] = this.selectedItem
   }
 
@@ -96,7 +100,9 @@ export class TableComponent implements OnInit {
     } else {
       var dataHandler = []
       for (let index = 0; index < Number(value.target.value); index++) {
-        dataHandler.push(this.concatedData[index])
+        if(this.concatedData[index] != undefined) {
+          dataHandler.push(this.concatedData[index])
+        }        
       }
       this.allEmployee = dataHandler
     }

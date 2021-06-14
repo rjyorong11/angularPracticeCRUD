@@ -53,6 +53,12 @@ input {
     box-sizing: border-box;
     outline: none;
 }
+.employeeHeader {
+    position: fixed;
+    padding-top: 20px;
+    width: 83%;
+    background-color: white;
+}
 
 .header,
 .footer {
