@@ -1,0 +1,25 @@
+<div *ngIf="getUserType === 'Passenger'">
+  <div class="bus-name-css">
+    <a>Ceres Bus</a>
+  </div>  
+  <div class="bus-details">
+    <p>3 KM/s</p>
+    <p>FAQ 3145</p>
+    <p>Aircon</p>
+    <p>Oslob-Cebu</p>
+    <button>Done</button>
+  </div>  
+</div>
+
+<div *ngIf="getUserType === 'Driver'">
+  <div class="bus-name-css">
+    <a>Ceres Bus</a>
+  </div> 
+  <div class="bus-details">
+    <input type="text" value="3 KM/s">
+    <input type="text" value="FAQ 3145">
+    <input type="text" value="Aircon">
+    <input type="text" value="Oslob-Cebu">
+    <button>Done</button>
+  </div>
+</div>

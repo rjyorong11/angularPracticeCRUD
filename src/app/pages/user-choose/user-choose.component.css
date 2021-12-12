@@ -1,0 +1,140 @@
+* {
+  color: white;
+}
+
+/* Assign full width inputs*/
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 40px;
+  margin-bottom: 8px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 50px;
+  color: black;
+}
+
+/* Set a style for the buttons*/
+button {
+  background-color: #37add5;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  margin-top: 10%;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 50px;
+}
+
+/* Set a hover effect for the button*/
+button:hover {
+  opacity: 0.8;
+}
+
+/* Set extra style for the cancel button*/
+.container {
+  padding: 16px;
+}
+
+.userWithIcon {
+  position: relative;
+}
+
+.userWithIcon i {
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  color: gray;
+}
+
+.passwordWithIcon {
+  position: relative;
+}
+
+.passwordWithIcon i {
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  color: gray;
+}
+
+label, p, .welcome {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form {
+  text-align: center;
+  float: right;
+  padding: 45px;
+  padding-top: 0;
+  margin-top: 0;
+  width: 40%;
+  border-left: 1px solid rgba(165, 165, 165, 0.5);
+  background-color: rgb(1, 37, 49);
+}
+p {
+  margin: 0;
+  font-size: 13px;
+  color: red;
+}
+
+.welcome {
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+* {
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(97, 160, 253);
+}
+
+.image {
+  position: fixed;
+  z-index: -1;
+  margin: 0;
+}
+
+img {
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+}
+
+.welcomeImage {
+  padding: 10%; 
+  width: 20%; 
+  height: 20%; 
+  margin: 10%;
+}
+
+.text {
+  padding: 20px;
+  margin-left: 20%;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  .image {
+      display: none;
+  }
+
+  .form {
+      height: 640px;
+      width: 100%;
+      margin: 0;
+      padding: 10px;
+  }
+}

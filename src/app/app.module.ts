@@ -14,6 +14,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AddNewUserComponent } from './pages/add-new-user/add-new-user.component';
 import { TableComponent } from './components/table/table.component';
 import { LayoutComponent } from './admin/layout/layout.component';
+import { UserChooseComponent } from './pages/user-choose/user-choose.component';
+import { ViewBusDetailsComponent } from './pages/view-bus-details/view-bus-details.component';
+import { FeedbackComponent } from './pages/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { LayoutComponent } from './admin/layout/layout.component';
     SidebarComponent,
     AddNewUserComponent,
     TableComponent,
-    LayoutComponent
+    LayoutComponent,
+    UserChooseComponent,
+    ViewBusDetailsComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,

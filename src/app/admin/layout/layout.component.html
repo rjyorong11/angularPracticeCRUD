@@ -1,4 +1,7 @@
-<app-sidebar [isHidden]="isHidden" *ngIf="logout"></app-sidebar>
+<app-sidebar [isHidden]="isHidden" (displayCurrentRoute)="getDataDisplayToHeader($event)" *ngIf="logout"></app-sidebar>
+<div class="header" *ngIf="logout">
+    <p>{{ displayHeader }}</p>
+</div>
 <div class="main-container" (window:resize)="getTheWidthResize($event)">
     <router-outlet></router-outlet>
 </div>

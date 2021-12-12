@@ -1,4 +1,8 @@
-<div>
-    <app-table [concatedData]="concatedData" (deleteSelectedMember)="getEmitedIndex($event)"></app-table>
-</div>
-<br><br>
+<div class="w3-container"><br>
+    <h2 style="text-align: center;">List of Buses</h2><br>
+    <ul class="w3-ul w3-card-4">
+        <li class="w3-display-container" (click)="viewBusDetails(1)">Jill <span onclick="this.parentElement.style.display='none'" class="w3-button w3-transparent w3-display-right">&times;</span></li>
+        <li class="w3-display-container" (click)="viewBusDetails(2)">Adam <span onclick="this.parentElement.style.display='none'" class="w3-button w3-transparent w3-display-right">&times;</span></li>
+        <li class="w3-display-container" (click)="viewBusDetails(3)">Eve <span onclick="this.parentElement.style.display='none'" class="w3-button w3-transparent w3-display-right">&times;</span></li>
+      </ul>
+  </div>

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/auth-service/authentication.service';
 import { DataService } from 'src/app/services/data.service';
 
@@ -9,19 +9,23 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  @Input() isHidden = false
+  @Input() isHidden = false;
+  @Output() displayCurrentRoute = new EventEmitter();
   public navbarMenus = [
     {path: "/dashboard", display: "Dashboard"},
-    {path: "/add-new-user", display: "Add Employee"}
+    {path: "/add-new-user", display: "User Profile"},
+    {path: "/feedback", display: "Feedback"}
   ]
 
   constructor(
     public auth: AuthenticationService,
     public router: Router,
+    public activatedRoute: ActivatedRoute,
     public dataService: DataService
   ) { }
 
   ngOnInit() {
+    this.changingHeader('Dashboard');
   }
 
   logOut() {  
@@ -36,6 +40,10 @@ export class SidebarComponent implements OnInit {
       this.isHidden = true
     }
     // console.log(this.isHidden)
+  }
+
+  changingHeader(data) {
+    this.displayCurrentRoute.emit(data);
   }
 
 }

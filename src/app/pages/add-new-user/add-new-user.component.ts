@@ -85,7 +85,7 @@ export class AddNewUserComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]); // read file as data url
 
       reader.onload = (event) => { // called once readAsDataURL is completed
-        this.image = event.target.result;
+        // this.image = event.target.result;
       }
     }
   }

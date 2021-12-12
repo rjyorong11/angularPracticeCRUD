@@ -26,7 +26,7 @@ export class AuthenticationService {
     login(userCredential: any) {
         if(this.partialDB.verifyLoggedUser(userCredential)) {
             localStorage.setItem('currentUser', userCredential.Password);
-            location.reload()
+            location.reload();
         }else {
             Swal.fire('Wrong Credentials', "You've entered an invalid credentials", 'error')
         }

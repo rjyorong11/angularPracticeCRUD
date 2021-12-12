@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/auth-service/authentication.service';
 import { DataService } from '../../services/data.service'
 
@@ -9,12 +9,14 @@ import { DataService } from '../../services/data.service'
   styleUrls: ['./login-pages.component.css']
 })
 export class LoginPagesComponent implements OnInit {
-  public showPassword = "password"
-  public username = ''
+  public showPassword = "password";
+  public username = '';
+  public chosenType = '';
 
   constructor(
     public auth: AuthenticationService,
     public router: Router,
+    public activatedRoute: ActivatedRoute,
     public dataService: DataService
   ) { }
 
@@ -23,6 +25,8 @@ export class LoginPagesComponent implements OnInit {
     if(user != null) {
       this.router.navigate(['/dashboard'])
     }
+    this.chosenType = this.activatedRoute.snapshot.params['type'];
+    
   }
 
   onLogin(userCred) {
